@@ -1,0 +1,15 @@
+extends layout
+
+block main-content
+  h1 Parks 
+  -// parks[0]
+  ul
+    each park in parks
+      - let locName = park.querySelector("LocationName").textContent;
+      - let locId = park.querySelector("LocationID").textContent;
+      - let facNames = park.querySelectorAll("FacilityDisplayName"); //returns an array
+      li 
+        a(href=`/park/${locId}`) #{locName}
+        ul 
+          each f in facNames 
+            li #{f.textContent}

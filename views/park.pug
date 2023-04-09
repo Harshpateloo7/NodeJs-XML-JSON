@@ -1,0 +1,9 @@
+extends layout
+
+block main-content
+  - let locName = park.querySelector("LocationName").textContent;
+  - let addr = park.querySelector("Address").textContent;
+  - let pCode = park.querySelector("PostalCode").textContent;
+  h1.page-title #{locName}
+  p #{addr}
+  p #{pCode}
